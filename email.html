@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <script>
+      function email() {
+        let emailresult = document.getElementById("email-input").value;
+        let codediv = document.getElementById("code-div");
+        if(emailresult == "cedarsgreens@gmail.com") {
+          codediv.innerHTML = "<p>Company Code: </p><input type='text' id='code-input'><button onclick='code()'>Submit</button>";
+        }
+        else {
+          codediv.innerHTML = "<p>There was an error processing your email</p>"
+        }
+      }
+    </script>
+    <script>
+      function code() {
+        let coderesult = document.getElementById("code-input").value;
+        let resultdiv = document.getElementById("result-div");
+        if(coderesult == "45083") {
+          resultdiv.innerHTML = "<p>We have found their location. Tap </p><a href='good.html'>here </a><p>to continue.</p>";
+        }
+        else {
+          resultdiv.innerHTML = "<p>Incorrect Code</p>"
+        }
+      }
+    </script>
+    <p>Email:</p>
+    <input type="text" id="email-input">
+    <button onclick="email()">Submit</button>
+    <div id="code-div"></div>
+    <div id="result-div"></div>
+  </body>
+</html>
